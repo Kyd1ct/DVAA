@@ -21,7 +21,6 @@ export default function HomeScreen(navigation) {
     </View>
     );
 }
-<<<<<<< HEAD:DVAA/navigation/screens/homeScreen.js
 
 const styles = StyleSheet.create({
     container_main: {
@@ -48,5 +47,3 @@ const styles = StyleSheet.create({
       alignItems: "center",
     }
   });
-=======
->>>>>>> 5d368472202f0acf6cdc97864628192953bee017:DVAA/navigation/screens/HomeScreen.js
