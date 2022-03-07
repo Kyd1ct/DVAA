@@ -9,6 +9,9 @@ export default function Vuln3Screen(navigation) {
          style = {{fontSize: 26, fontWeight: 'bold'}}>
                 Vulnerabilitie 3 Screen
         </Text>
+
+        <View style ={{flex: 1, backgroundColor: "red"}} />
+
     </View>
     );
 }
