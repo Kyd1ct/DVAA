@@ -14,9 +14,9 @@ export default function HomeScreen(navigation) {
                 This is vulnerable Android application created to aid developers and security researchers in writing secure code and improving their pentesting abilities.
             </Text>
         </View>
-        <View style = {{flex: 3, paddingLeft: 15, paddingRight: 15, alignItems: "center", flexDirection: 'row'}}>
-              <Button onPress={() => Alert.alert('About us')} title="About us" color="#841584" accessibilityLabel='Test accessiblity text'/>
-              <Button onPress={() => Alert.alert('More Info')} title="More information" color="#841584" accessibilityLabel='Test accessiblity text'/>
+        <View style = {{flex: 3, alignItems: "center", flexDirection: 'row'}}>
+              <Button style = {{paddingLeft: 15, paddingRight: 15}} onPress={() => Alert.alert('About us')} title="About us" color="#841584" accessibilityLabel='Test accessiblity text'/>
+              <Button style= {{paddingLeft: 15, paddingRight: 15}} onPress={() => Alert.alert('More Info')} title="More information" color="#841584" accessibilityLabel='Test accessiblity text'/>
         </View>
     </View>
     );
