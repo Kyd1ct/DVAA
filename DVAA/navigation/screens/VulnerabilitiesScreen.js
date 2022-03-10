@@ -1,36 +1,47 @@
 import * as React from 'react';
-import {View, ScrollView, Text } from 'react-native';
+import {View, ScrollView, StyleSheet, Text , Button, Alert} from 'react-native';
 
 import * as Navigation from '@react-navigation/native';
+import GlobalStyles from './stylesheets/styles';
 
 export default function VulnScreen(navigation) {
     return(
 
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
+      // Main View
+      <View style={GlobalStyles.vulnContainer}>
 
-      }}>
-        <View style={{height: 150, backgroundColor: 'gray' }}>
-          <Text style={{color: 'white'}}>
-          1st Vulnerablity
+        // Vulnerability 1 (BROKEN AUTHENTICATION)
+        //
+        <View style={GlobalStyles.vulnPick}>
+          <View style = {GlobalStyles.inside_vulnPick}
+            <Text style = {GlobalStyles.heading}>
+            Broken Authentication
+            </Text>
+            <Text style = {GlobalStyles.body}>
+            This vulnerabilty is all about issues that can be found
+            within the Authentication like for example the login page.
+            </Text>
+            <Button
+              title = "Broken Authentication"
+              onPress = {() => alert('Redirecting to Broken Authentication vulnerability')}
+            />
+          </View>
+        </View>
+
+        // Vulnerability 2 (REFLECTED XSS)
+        <View style={GlobalStyles.vulnPick}>
+          <Text style={GlobalStyles.heading}>
+          Reflected XSS
           </Text>
         </View>
 
-
-        <View style={{height: 150, marginTop: 10, backgroundColor: 'gray'}}>
-          <Text style={{color: 'white'}}>
-          2nd Vulnerablity
-          </Text>
-        </View>
-
-        <View style={{height: 150, marginTop: 10, backgroundColor: 'gray'}}>
-          <Text style={{color: 'white'}}>
-          3rd Vulnerablity
+        // Vulnerability 3 (SQL INJECTION)
+        <View style={GlobalStyles.vulnPick}>
+          <Text style={GlobalStyles.heading}>
+          SQL Injection
           </Text>
         </View>
       </View>
     );
+
 }

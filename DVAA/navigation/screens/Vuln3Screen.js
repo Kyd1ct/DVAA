@@ -10,8 +10,6 @@ export default function Vuln3Screen(navigation) {
                 Vulnerabilitie 3 Screen
         </Text>
 
-        <View style ={{flex: 1, backgroundColor: "red"}} />
-
     </View>
     );
 }
