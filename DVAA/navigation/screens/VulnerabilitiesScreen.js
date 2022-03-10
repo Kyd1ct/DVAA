@@ -13,19 +13,17 @@ export default function VulnScreen(navigation) {
         // Vulnerability 1 (BROKEN AUTHENTICATION)
         //
         <View style={GlobalStyles.vulnPick}>
-          <View style = {GlobalStyles.inside_vulnPick}
-            <Text style = {GlobalStyles.heading}>
-            Broken Authentication
-            </Text>
-            <Text style = {GlobalStyles.body}>
-            This vulnerabilty is all about issues that can be found
-            within the Authentication like for example the login page.
-            </Text>
-            <Button
-              title = "Broken Authentication"
-              onPress = {() => alert('Redirecting to Broken Authentication vulnerability')}
-            />
-          </View>
+          <Text style = {GlobalStyles.heading}>
+          Broken Authentication
+          </Text>
+          <Text style = {GlobalStyles.body}>
+          This vulnerabilty is all about issues that can be found
+          within the Authentication like for example the login page.
+          </Text>
+          <Button
+            title = "Broken Authentication"
+            onPress = {() => alert('Redirecting to Broken Authentication vulnerability')}
+          />
         </View>
 
         // Vulnerability 2 (REFLECTED XSS)
