@@ -1,36 +1,65 @@
 import * as React from 'react';
-import {View, ScrollView, Text } from 'react-native';
+import {View, ScrollView, StyleSheet, Text, Button, Alert} from 'react-native';
 
 import * as Navigation from '@react-navigation/native';
+import GlobalStyles from './stylesheets/styles';
 
 export default function VulnScreen(navigation) {
     return(
 
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
+      // Main Scroll View
+      <ScrollView style = {GlobalStyles.scrollContainer}>
 
-      }}>
-        <View style={{height: 150, backgroundColor: 'gray' }}>
-          <Text style={{color: 'white'}}>
-          1st Vulnerablity
+        {/* Vulnerability 1 (Broken Authentication) */}
+        <View style = {GlobalStyles.vulnPick}>
+          <Text style = {GlobalStyles.heading}>
+          Broken Authentication
           </Text>
+
+          <Text style = {GlobalStyles.body}>
+          This vulnerabilty is all about issues that can be found
+          within the Authentication like for example the login page.
+          </Text>
+
+          <Button
+            title = 'Broken Authentication'
+            onPress = {() => alert('Redirecting to Broken Authentication vulnerability')}
+          />
         </View>
 
 
-        <View style={{height: 150, marginTop: 10, backgroundColor: 'gray'}}>
-          <Text style={{color: 'white'}}>
-          2nd Vulnerablity
+        {/* Vulnerability 2 (XSS) */}
+        <View style = {GlobalStyles.vulnPick}>
+          <Text style = {GlobalStyles.heading}>
+          Cross-site Scripting (XSS)
           </Text>
+
+          <Text style = {GlobalStyles.body}>
+          This vulnerabilty is about injecting malicious JavaScript code into
+          fields that do not have sufficient input validation
+          </Text>
+
+          <Button
+            title = 'Cross-site Scripting'
+            onPress = {() => alert('Redirecting to Cross-site Scripting vulnerability')}
+          />
         </View>
 
-        <View style={{height: 150, marginTop: 10, backgroundColor: 'gray'}}>
-          <Text style={{color: 'white'}}>
-          3rd Vulnerablity
+
+        {/* Vulnerability 3 (SQL Injection) */}
+        <View style = {GlobalStyles.vulnPick}>
+          <Text style = {GlobalStyles.heading}>
+          SQL Injection
           </Text>
+          <Text style = {GlobalStyles.body}>
+          This vulnerabilty is about trying to inject malicious
+          code into a database query which then spits database records
+          </Text>
+          <Button
+            title = 'SQL Injection'
+            onPress = {() => alert('Redirecting to SQL Injection vulnerability')}
+          />
         </View>
-      </View>
-    );
-}
+      </ScrollView>
+      );
+  };

@@ -19,25 +19,15 @@ import Vuln3Screen from './screens/Vuln3Screen';
 const homeName = "Home";
 const vulnName = "Vulnerabilities";
 const docName = "Documentation";
-const vuln1 = "Vulnerablitie1";
-const vuln2 = "Vulnerablitie2";
-const vuln3 = "Vulnerablitie3";
+const vuln1 = "Vulnerablity1";
+const vuln2 = "Vulnerablity2";
+const vuln3 = "Vulnerablity3";
 
 const Tab = createBottomTabNavigator();
 
 export default function MainContainer(){
     return(
         <NavigationContainer>
-        {/* <View style= {{flex:1}}>
-        <Text style ={styles.titleText}>Damn Vulnerable Android Application</Text>
-            <StatusBar style="auto" />
-        </View>
-        <View style = {{flex: 2}}>
-            <Text style={styles.normalText}>This is an intentionally vulnerable android application used to train developers and security professionals.</Text>
-        </View>
-        <View style = {{flex: 3}}>
-            <Button onPress={() => Alert.alert('simple button')} title="Example Button" color="#841584" accessibilityLabel='Test accessiblity text'/>
-        </View> */}
             <Tab.Navigator
             initialRouteName={homeName}
             screenOptions={({route}) => ({
@@ -49,10 +39,10 @@ export default function MainContainer(){
                         iconName = focused ? 'home' : 'home-outline';
                     }
                     else if (rn === vulnName) {
-                        iconName = focused ? 'list' : 'list-outline';
+                        iconName = focused ? 'terminal' : 'terminal';
                     }
                     else if (rn === docName) {
-                        iconName = focused ? 'settings' : 'settings-outline';
+                        iconName = focused ? 'documents' : 'ios-file-tray-full-sharp';
                     }
 
                     return <Ionicons name={iconName} size={size} color={color}/>
@@ -60,7 +50,7 @@ export default function MainContainer(){
             })}
 
             tabBarOptions={{
-                activeTintColor: 'blue',
+                activeTintColor: 'orange',
                 inactiveTintColor: 'grey',
                 labelStyle: {paddingBottom: 10, fontSize: 10},
                 style: {padding: 10, height: 70}
