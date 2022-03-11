@@ -42,7 +42,7 @@ export default function MainContainer(){
                         iconName = focused ? 'terminal' : 'terminal';
                     }
                     else if (rn === docName) {
-                        iconName = focused ? 'documents' : 'ios-file-tray-full-sharp';
+                        iconName = focused ? 'ios-file-tray-full-sharp' : 'ios-file-tray-full-sharp';
                     }
 
                     return <Ionicons name={iconName} size={size} color={color}/>
