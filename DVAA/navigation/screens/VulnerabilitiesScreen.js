@@ -7,8 +7,8 @@ import GlobalStyles from './stylesheets/styles';
 export default function VulnScreen(navigation) {
     return(
 
-      // Main View
-      <View>
+      // Main Scroll View
+      <ScrollView style = {GlobalStyles.scrollContainer}>
 
         {/* Vulnerability 1 (Broken Authentication) */}
         <View style = {GlobalStyles.vulnPick}>
@@ -60,6 +60,6 @@ export default function VulnScreen(navigation) {
             onPress = {() => alert('Redirecting to SQL Injection vulnerability')}
           />
         </View>
-      </View>
+      </ScrollView>
       );
   };

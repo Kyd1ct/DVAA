@@ -2,9 +2,9 @@ import {React} from 'react';
 import {View, StyleSheet, StatusBar} from 'react-native';
 
 export default StyleSheet.create({
-  container: {
+  scrollContainer: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    marginTop: StatusBar.currentHeight,
   },
 
   vulnContainer: {
@@ -40,7 +40,7 @@ export default StyleSheet.create({
   vulnPick: {
     height: 150,
     backgroundColor: 'gray',
-    marginTop: 10,
+    marginBottom: 10,
 
   },
 });
