@@ -43,8 +43,4 @@ export default StyleSheet.create({
     marginTop: 10,
 
   },
-
-  inside_vulnPick: {
-    flex: 1,
-  },
 });
