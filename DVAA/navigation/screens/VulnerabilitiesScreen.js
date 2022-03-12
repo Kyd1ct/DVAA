@@ -4,7 +4,13 @@ import {View, ScrollView, StyleSheet, Text, Button, Alert} from 'react-native';
 import * as Navigation from '@react-navigation/native';
 import GlobalStyles from './stylesheets/styles';
 
-export default function VulnScreen(navigation) {
+import * as MainContainer from '../MainNavigation';
+import Vuln1Screen from './Vuln1Screen';
+import Vuln2Screen from './Vuln2Screen';
+import Vuln3Screen from './Vuln3Screen';
+
+
+export default function VulnScreen({navigation}) {
     return(
 
       // Main Scroll View
@@ -23,7 +29,7 @@ export default function VulnScreen(navigation) {
 
           <Button
             title = 'Broken Authentication'
-            onPress = {() => alert('Redirecting to Broken Authentication vulnerability')}
+            onPress = {() => navigation.navigate('Vulnerability1')}
           />
         </View>
 
@@ -41,7 +47,7 @@ export default function VulnScreen(navigation) {
 
           <Button
             title = 'Cross-site Scripting'
-            onPress = {() => alert('Redirecting to Cross-site Scripting vulnerability')}
+            onPress = {() => navigation.navigate('Vulnerability2')}
           />
         </View>
 
@@ -57,7 +63,7 @@ export default function VulnScreen(navigation) {
           </Text>
           <Button
             title = 'SQL Injection'
-            onPress = {() => alert('Redirecting to SQL Injection vulnerability')}
+            onPress = {() => navigation.navigate('Vulnerability3')}
           />
         </View>
       </ScrollView>

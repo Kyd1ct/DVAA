@@ -3,6 +3,7 @@ import * as React from 'react';
 import { StyleSheet, Button, Text, View, Alert } from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
+import { createNavigationContainerRef } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -14,6 +15,8 @@ import DocScreen from './screens/DocumentationScreen';
 import Vuln1Screen from './screens/Vuln1Screen';
 import Vuln2Screen from './screens/Vuln2Screen';
 import Vuln3Screen from './screens/Vuln3Screen';
+import AboutUs from './screens/AboutUs';
+import MoreInfo from './screens/MoreInfo';
 
 // Screen names
 const homeName = "Home";
@@ -24,10 +27,20 @@ const vuln2 = "Vulnerablity2";
 const vuln3 = "Vulnerablity3";
 
 const Tab = createBottomTabNavigator();
+const navigationRef = createNavigationContainerRef();
+
+export function navigate(name, params) {
+    if (navigationRef.isReady()) {
+      navigationRef.navigate(name, params);
+    }
+    else {
+        navigationRef.current.getRootState()
+    }
+  }
 
 export default function MainContainer(){
     return(
-        <NavigationContainer>
+        <NavigationContainer ref = {navigationRef}>
             <Tab.Navigator
             initialRouteName={homeName}
             screenOptions={({route}) => ({
@@ -57,11 +70,32 @@ export default function MainContainer(){
             }}
             >
 
-                <Tab.Screen name={homeName} component={HomeScreen}/>
-                <Tab.Screen name={vulnName} component={VulnScreen}/>
-                <Tab.Screen name={docName} component={DocScreen}/>
+            <Tab.Screen name={homeName} component={HomeScreen}/>
+            <Tab.Screen name={vulnName} component={VulnScreen}/>
+            <Tab.Screen name={docName} component={DocScreen}/>
+            <Tab.Screen  name = 'Vulnerability1' component = {Vuln1Screen} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            }} />
+            <Tab.Screen  name = 'Vulnerability2' component = {Vuln2Screen} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            }} />
+            <Tab.Screen  name = 'Vulnerability3' component = {Vuln3Screen} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            }} />
+            <Tab.Screen  name = 'About Us' component = {AboutUs} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            }} />
+            <Tab.Screen  name = 'More Info' component = {MoreInfo} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            }} />
 
             </Tab.Navigator>
+            
         </NavigationContainer>
     )
 }

@@ -7,7 +7,7 @@ export default function Vuln1Screen(navigation) {
         <Text
          onPress={() => alert('This is the Home Screen.')}
          style = {{fontSize: 26, fontWeight: 'bold'}}>
-                Vulnerabilitie 1 Screen
+                Vulnerability 1 Screen
         </Text>
     </View>
     );
