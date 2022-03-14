@@ -18,6 +18,7 @@ export default StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
     fontWeight: 'bold',
+    color: 'black',
   },
 
   heading: {
@@ -47,4 +48,29 @@ export default StyleSheet.create({
   inside_vulnPick: {
     flex: 1,
   },
+
+  flex1: {
+    flex: 1,
+  },
+
+  loginStylesheet: {
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: 70,
+  },
+
+  input: {
+    height: 35,
+    borderWidth: 1,
+    width: '70%',
+    textAlign: 'left',
+    paddingLeft: 7,
+    marginBottom: 7,
+  },
+
+  buttonView: {
+    flex: 1,
+    flexDirection: 'row',
+
+  }
 });
