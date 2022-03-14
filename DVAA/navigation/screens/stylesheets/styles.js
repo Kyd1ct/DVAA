@@ -10,8 +10,8 @@ export default StyleSheet.create({
   vulnContainer: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   title: {
@@ -26,7 +26,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     marginTop: 5,
-
+    marginHorizontal: 10,
   },
 
   body: {
@@ -35,16 +35,21 @@ export default StyleSheet.create({
     color: 'white',
     paddingTop: 5,
     paddingBottom: 10,
+    marginHorizontal: 10,
   },
 
   vulnPick: {
-    height: 150,
+    height: 190,
+    flex: 1,
     backgroundColor: 'gray',
     marginTop: 10,
+    justifyContent: 'center',
+    marginHorizontal: 12,
 
   },
 
   inside_vulnPick: {
     flex: 1,
+    marginHorizontal: 10,
   },
 });

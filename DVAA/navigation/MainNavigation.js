@@ -22,9 +22,6 @@ import MoreInfo from './screens/MoreInfo';
 const homeName = "Home";
 const vulnName = "Vulnerabilities";
 const docName = "Documentation";
-const vuln1 = "Vulnerablity1";
-const vuln2 = "Vulnerablity2";
-const vuln3 = "Vulnerablity3";
 
 const Tab = createBottomTabNavigator();
 const navigationRef = createNavigationContainerRef();
@@ -69,10 +66,13 @@ export default function MainContainer(){
                 style: {padding: 10, height: 70}
             }}
             >
-
+            {/*Visible tab Screens*/}
             <Tab.Screen name={homeName} component={HomeScreen}/>
             <Tab.Screen name={vulnName} component={VulnScreen}/>
             <Tab.Screen name={docName} component={DocScreen}/>
+
+
+
             <Tab.Screen  name = 'Vulnerability1' component = {Vuln1Screen} options={{
             tabBarButton: () => null,
             tabBarVisible: false,
