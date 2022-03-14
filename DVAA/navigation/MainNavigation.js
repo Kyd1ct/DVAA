@@ -41,6 +41,7 @@ export default function MainContainer(){
             <Tab.Navigator
             initialRouteName={homeName}
             screenOptions={({route}) => ({
+                 tabBarStyle: {height: 60, paddingTop: 7},
                 tabBarIcon: ({focused, color, size}) => {
                     let iconName;
                     let rn = route.name;
@@ -60,10 +61,10 @@ export default function MainContainer(){
             })}
 
             tabBarOptions={{
+                //tabBarStyle: {padding: 10, height: 200},
                 activeTintColor: 'orange',
                 inactiveTintColor: 'grey',
                 labelStyle: {paddingBottom: 10, fontSize: 10},
-                style: {padding: 10, height: 70}
             }}
             >
             {/*Visible tab Screens*/}
