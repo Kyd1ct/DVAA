@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, Text, StyleSheet, Button, Alert } from 'react-native';
 
-export default function HomeScreen(navigation) {
+export default function HomeScreen({navigation}) {
     return(
     <View style = {{flex: 1, flexDirection: "column", paddingTop: 15}}>
         <View style = {{flex : 1}}>
@@ -14,9 +14,9 @@ export default function HomeScreen(navigation) {
                 This is vulnerable Android application created to aid developers and security researchers in writing secure code and improving their pentesting abilities.
             </Text>
         </View>
-        <View style = {{flex: 3, alignItems: "center", flexDirection: 'row'}}>
-              <Button style = {{paddingLeft: 15, paddingRight: 15}} onPress={() => Alert.alert('About us')} title="About us" color="#841584" accessibilityLabel='Test accessiblity text'/>
-              <Button style= {{paddingLeft: 15, paddingRight: 15}} onPress={() => Alert.alert('More Info')} title="More information" color="#841584" accessibilityLabel='Test accessiblity text'/>
+        <View style = {{flex: 3, alignItems: "center", flexDirection: 'row', justifyContent: 'space-evenly'}}>
+              <Button style = {{marginLeft: 15, marginRight: 15}} onPress={() => navigation.navigate('About Us')} title="About us" color="#841584" accessibilityLabel='Test accessiblity text'/>
+              <Button style= {{marginLeft: 15, marginRight: 15}} onPress={() => navigation.navigate('More Info')} title="More information" color="#841584" accessibilityLabel='Test accessiblity text'/>
         </View>
     </View>
     );
