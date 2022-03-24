@@ -1,74 +1,92 @@
 import React, { useState, useEffect } from 'react';
-import {ScrollView, View, Text , TextInput, Button} from 'react-native';
+import {ScrollView, View, Text , TextInput, Button, Alert, String} from 'react-native';
 import * as SQLite from 'expo-sqlite';
 
 
  import GlobalStyles from './stylesheets/styles';
 
- const db = SQLite.openDatabase('USERS');
-
- db.exec([{ sql: 'PRAGMA foreign_keys = ON;', args: [] }], false, () =>
-   console.log('Foreign keys turned on'),
-   alert('success')
- );
  
 
-export default function Vuln1Screen({navigation}) {
+ const db = SQLite.openDatabase("USERS");
+ var userName;
+ var userPass;
 
-    const [name, setName] = useState('');
-    const [pass, setPass] = useState('');
-    
-    useEffect(()=> {
-      createTable();
-      getData();
-    }, []);
+ export default function Vuln1Screen({navigation}) {
 
-    const createTable = () => {
-      db.transaction ((tx) => {
+  const [name, setName] = useState('');
+  const [pass, setPass] = useState('');
+
+     useEffect(()=> {
+       createTable();
+       }, []);
+
+    function createTable() {
+      db.transaction((tx) => {
         tx.executeSql(
-          'CREATE TABLE IF NOT EXISTS'
-          + 'USERS'
-          + '(ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Pass TEXT);'
-        )
-      })
+          "create table if not exists items (ID integer primary key not null, Name text, Password text);"
+        );
+        Alert.alert('Success')
+      });
     }
 
-    const getData = () => {
-      try {
-          db.transaction((tx) => {
-              tx.executeSql(
-                  "SELECT Name, Pass FROM USERS",
-                  [],
-                  (tx, results) => {
-                      var len = results.rows.length;
-                      if (len > 0) {
-                          navigation.navigate('Home');
-                      }
-                  }
-              )
-          })
-      } catch (error) {
-          console.log(error);
-      }
-  }
+     const getData = () => {
+        try {
+            // AsyncStorage.getItem('UserData')
+            //     .then(value => {
+            //         if (value != null) {
+            //             navigation.navigate('Home');
+            //         }
+            //     })
+            db.transaction((tx) => {
+                tx.executeSql(
+                    "SELECT * FROM USERS",
+                    [],
+                    (_, results) => {
+                        var len = results.rows.length;
+                        if (len > 0) {
+                            Alert.alert(len);
+                        }
+                        else if (len = 0) {
+                          Alert.alert('Failed transaction!');
+                        }
+                    }
+                )
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
-  const setData = async () => {
-      if (name.length == 0 || pass.length == 0) {
+
+    const setData = async () => {
+      if (name.length == 0 && pass.length == 0) {
           Alert.alert('Warning!', 'Please write your data.')
       } else {
           try {
+              // var user = {
+              //     Name: name,
+              //     Age: age
+              // }
+              // await AsyncStorage.setItem('UserData', JSON.stringify(user));
               await db.transaction(async (tx) => {
+                  // await tx.executeSql(
+                  //     "INSERT INTO Users (Name, Age) VALUES ('" + name + "'," + age + ")"
+                  // );
                   await tx.executeSql(
-                      "INSERT INTO Users (Name, Pass) VALUES (?,?)",
+                      "INSERT INTO Users (Name, Age) VALUES (?,?)",
                       [name, pass]
                   );
+                  //navigation.navigate('Home');
+                  Alert.alert(name,pass);
               })
-              navigation.navigate('Home');
+
           } catch (error) {
               console.log(error);
           }
       }
   }
+
+
 
     return(
       <ScrollView style = {GlobalStyles.container}>
@@ -80,13 +98,13 @@ export default function Vuln1Screen({navigation}) {
             <TextInput
               style={GlobalStyles.input}
               placeholder="Username"
-              onChangeText={(value) => setName(value)}
+              onChangeText={(name) => setName(name)}
             />
             <TextInput
               style={GlobalStyles.input}
               secureTextEntry={true}
               placeholder="Password"
-              onChangeText={(value) => setPass(value)}
+              onChangeText={(pass) => setPass(pass)}
             />
             <View style = {GlobalStyles.buttonView}>
               <Button
@@ -97,6 +115,7 @@ export default function Vuln1Screen({navigation}) {
                 title = 'Register'
                 onPress = {setData}
               />
+        
             </View>
           </View>
         </View>
