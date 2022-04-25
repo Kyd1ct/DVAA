@@ -22,6 +22,12 @@ import MoreInfo from './screens/MoreInfo';
 const homeName = "Home";
 const vulnName = "Vulnerabilities";
 const docName = "Documentation";
+const vuln1Name = "Vulnerability1";
+const vuln2Name = "Vulnerability2";
+const vuln3Name = "Vulnerability3";
+const aboutUs = "About Us";
+const moreInfo = "More Info";
+
 
 const Tab = createBottomTabNavigator();
 const navigationRef = createNavigationContainerRef();
@@ -74,23 +80,26 @@ export default function MainContainer(){
 
 
 
-            <Tab.Screen  name = 'Vulnerability1' component = {Vuln1Screen} options={{
+            <Tab.Screen  name = {vuln1Name} component = {Vuln1Screen} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            title: 'BR0K3N AUTH3NTICAT1ON'
+            }} />
+            <Tab.Screen  name = {vuln2Name} component = {Vuln2Screen} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            title: 'Stored XSS'
+            }} />
+            <Tab.Screen  name = {vuln3Name} component = {Vuln3Screen} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            title: 'WOW an API?'
+            }} />
+            <Tab.Screen  name = {aboutUs} component = {AboutUs} options={{
             tabBarButton: () => null,
             tabBarVisible: false,
             }} />
-            <Tab.Screen  name = 'Vulnerability2' component = {Vuln2Screen} options={{
-            tabBarButton: () => null,
-            tabBarVisible: false,
-            }} />
-            <Tab.Screen  name = 'Vulnerability3' component = {Vuln3Screen} options={{
-            tabBarButton: () => null,
-            tabBarVisible: false,
-            }} />
-            <Tab.Screen  name = 'About Us' component = {AboutUs} options={{
-            tabBarButton: () => null,
-            tabBarVisible: false,
-            }} />
-            <Tab.Screen  name = 'More Info' component = {MoreInfo} options={{
+            <Tab.Screen  name = {moreInfo} component = {MoreInfo} options={{
             tabBarButton: () => null,
             tabBarVisible: false,
             }} />

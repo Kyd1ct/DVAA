@@ -54,11 +54,12 @@ export default function VulnScreen({navigation}) {
         {/* Vulnerability 3 (SQL Injection) */}
         <View style = {GlobalStyles.vulnPick}>
           <Text style = {GlobalStyles.heading}>
-          SQL Injection
+          WOW an API?
           </Text>
           <Text style = {GlobalStyles.body}>
-          This vulnerabilty is about trying to inject malicious
-          code into a database query which then spits database records
+          WOW an API will introduce you to a data leakage vulnerability 
+          and the ease of reverse engineering React Native applications without
+          appropriate countermeasures
           </Text>
           <View style = {{ marginTop: 10, marginHorizontal: '25%'}}>
             <Button

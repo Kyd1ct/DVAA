@@ -111,6 +111,7 @@ import * as SQLite from 'expo-sqlite';
                 title = 'Login'
                 onPress = {getData}
               />
+              <View style={{width: 70}} />
               <Button
                 title = 'Register'
                 onPress = {setData}

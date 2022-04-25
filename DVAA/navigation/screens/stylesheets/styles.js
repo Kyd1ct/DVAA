@@ -76,6 +76,14 @@ export default StyleSheet.create({
   buttonView: {
     flex: 1,
     flexDirection: 'row',
+    justifyContent: 'space-between',
+
+  },
+
+  buttonCenter: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
 
   }
 });
