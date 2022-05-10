@@ -17,6 +17,7 @@ import Vuln2Screen from './screens/Vuln2Screen';
 import Vuln3Screen from './screens/Vuln3Screen';
 import AboutUs from './screens/AboutUs';
 import MoreInfo from './screens/MoreInfo';
+import LoggedIn from './screens/loggedIn';
 
 // Screen names
 const homeName = "Home";
@@ -78,6 +79,10 @@ export default function MainContainer(){
             tabBarButton: () => null,
             tabBarVisible: false,
             }} />
+            <Tab.Screen  name = 'LoggedIn' component = {LoggedIn} options={{
+            tabBarButton: () => null,
+            tabBarVisible: false,
+            }} />
             <Tab.Screen  name = 'Vulnerability2' component = {Vuln2Screen} options={{
             tabBarButton: () => null,
             tabBarVisible: false,
@@ -96,7 +101,7 @@ export default function MainContainer(){
             }} />
 
             </Tab.Navigator>
-            
+
         </NavigationContainer>
     )
 }
