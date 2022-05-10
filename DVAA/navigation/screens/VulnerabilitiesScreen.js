@@ -57,13 +57,13 @@ export default function VulnScreen({navigation}) {
           WOW an API?
           </Text>
           <Text style = {GlobalStyles.body}>
-          WOW an API will introduce you to a data leakage vulnerability 
+          WOW an API will introduce you to a data leakage vulnerability
           and the ease of reverse engineering React Native applications without
           appropriate countermeasures
           </Text>
           <View style = {{ marginTop: 10, marginHorizontal: '25%'}}>
             <Button
-              title = 'SQL Injection'
+              title = 'Data Leakage'
               onPress = {() => navigation.navigate('Vulnerability3')}
             />
           </View>
