@@ -1,16 +1,14 @@
 import * as React from 'react';
 import {View, Text } from 'react-native';
 
-
-export default function Vuln2Screen(navigation) {
+export default function Vuln1Screen(navigation) {
     return(
     <View style ={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text
-         onPress={() => alert('Vulnerability 2 screen.')}
+         onPress={() => alert('This is the Home Screen.')}
          style = {{fontSize: 26, fontWeight: 'bold'}}>
-                Vulnerability 2 Screen
+                About Us
         </Text>
-
     </View>
     );
 }
